@@ -9,6 +9,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {LoginService} from './services/login.service';
 import {SecurityService} from './services/security.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {NavComponent} from './nav/nav.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,7 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
+    NavComponent,
     DashboardComponent
   ],
   imports: [

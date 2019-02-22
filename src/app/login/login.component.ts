@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   }
   login() {
     // attivare la chiamata al servizio
-    alert( this.userdto.username );
+    /*alert( this.userdto.username );*/
     this.loginservice.doLogin(this.userdto).subscribe(
       response => {
         this.responseMessage = (<ResponseMessage>response);
@@ -35,12 +35,15 @@ export class LoginComponent implements OnInit {
         this.code = this.responseMessage.code;
         if (this.code === '200') {
           this.user = <User>this.responseMessage.body;
-        } else {
+          console.log(this.user);
           this.router.navigateByUrl('/dashboard');
+        } else {
+          alert('non sbagliare!!!');
+          this.router.navigateByUrl('');
         }
         /** gestore del componente ... mi dichiara... la variabile */
       },
-      error => this.router.navigateByUrl('/dashboard')
+      error => this.router.navigateByUrl('')
     );
     }
 }
