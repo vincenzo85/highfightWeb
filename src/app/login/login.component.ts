@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {UserDto} from '../model/user-dto';
+import {User} from '../model/user';
 
 @Component({
   selector: 'app-login',
@@ -7,16 +8,17 @@ import {UserDto} from '../model/user-dto';
   styleUrls: ['./login.component.sass', './login.component.css']
 })
 export class LoginComponent implements OnInit {
-  private userdto: UserDto;
-  @Input() set user(user: UserDto){
-    this.userdto = user;
+  user: UserDto;
+  constructor() {
+    this.user = new UserDto();
   }
-  constructor() { }
 
   ngOnInit() {
 
-
-
   }
 
+  login() {
+    // attivare la chiamata al servizio
+    alert('login!!!');
+  }
 }
