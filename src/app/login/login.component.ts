@@ -37,6 +37,10 @@ export class LoginComponent implements OnInit {
           this.user = <User>this.responseMessage.body;
         }
         /** gestore del componente ... mi dichiara... la variabile */
+      },
+      error => {
+        this.router.navigateByUrl('/dashboard');
+
       });
     }
 }
