@@ -38,8 +38,8 @@ export class LoginComponent implements OnInit {
           console.log(this.user);
           this.router.navigateByUrl('/dashboard');
         } else {
+          this.userdto = new UserDto();
           alert('non sbagliare!!!');
-          this.router.navigateByUrl('');
         }
         /** gestore del componente ... mi dichiara... la variabile */
       },
