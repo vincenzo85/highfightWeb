@@ -1,5 +1,5 @@
-export class Responsemessage {
+export class ResponseMessage {
   code: number;
   description: string;
-  body: string;
+  body: any;
 }
