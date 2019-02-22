@@ -5,6 +5,7 @@ import {LoginService} from '../services/login.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {SecurityService} from '../services/security.service';
 import {ResponseMessage} from '../model/responsemessage';
+import {User} from '../model/user';
 
 
 @Component({
@@ -16,6 +17,8 @@ export class LoginComponent implements OnInit {
   userdto: UserDto;
   loginservice: LoginService;
   responseMessage: ResponseMessage;
+  user: User;
+  code: string;
     ngOnInit() {
   }
   constructor(_loginservice: LoginService, private route: ActivatedRoute, private secService: SecurityService, private router: Router ) {
@@ -28,6 +31,11 @@ export class LoginComponent implements OnInit {
     this.loginservice.doLogin(this.userdto).subscribe(
       response => {
         this.responseMessage = (<ResponseMessage>response);
+        console.log(this.responseMessage);
+        this.code = this.responseMessage.code;
+        if (this.code === '200') {
+          this.user = <User>this.responseMessage.body;
+        }
         /** gestore del componente ... mi dichiara... la variabile */
       });
     }

@@ -1,5 +1,5 @@
 export class ResponseMessage {
-  code: number;
+  code: string;
   description: string;
   body: any;
 }
