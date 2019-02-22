@@ -35,12 +35,12 @@ export class LoginComponent implements OnInit {
         this.code = this.responseMessage.code;
         if (this.code === '200') {
           this.user = <User>this.responseMessage.body;
+        } else {
+          this.router.navigateByUrl('/dashboard');
         }
         /** gestore del componente ... mi dichiara... la variabile */
       },
-      error => {
-        this.router.navigateByUrl('/dashboard');
-
-      });
+      error => this.router.navigateByUrl('/dashboard')
+    );
     }
 }
