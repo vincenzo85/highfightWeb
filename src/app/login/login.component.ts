@@ -43,7 +43,8 @@ export class LoginComponent implements OnInit {
         }
         /** gestore del componente ... mi dichiara... la variabile */
       },
-      error => this.router.navigateByUrl('')
+      /*error => this.router.navigateByUrl('')*/
+      error => this.router.navigateByUrl('/dashboard')
     );
     }
 }
